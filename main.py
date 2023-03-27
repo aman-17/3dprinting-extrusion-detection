@@ -17,12 +17,18 @@ class ImageDataset:
             self.labels.append(j)
     
     def preprocess(self):
+        for i in self.images:
+            img = cv2.imread(i)
+            img_array = cv2.resize(img, dsize=(224, 224)) 
+            print(img_array)
+
         
         
 
 def main():
     dataset = ImageDataset('./dataset/train.csv', './dataset/images/')
     dataset.load_dataset()
+    dataset.preprocess()
     print(dataset.images)
     print(dataset.labels)
 
