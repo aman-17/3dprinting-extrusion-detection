@@ -49,7 +49,6 @@ val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False, num_w
 
 print(len(train_loader))
 
-
 class ResidualAttentionBlock(nn.Module):
     def __init__(self, in_channels, out_channels):
         super(ResidualAttentionBlock, self).__init__()
